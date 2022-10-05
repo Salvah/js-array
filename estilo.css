@@ -1,0 +1,26 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+ul {list-style-type: none;}
+li{padding: 4px 8px; border: dashed 1px gainsboro;
+display: flex; justify-content: space-between;}
+
+li>span:last-child{font-weight: bold;}
+
+button {
+    padding: 6px;
+    border-radius: 8px;
+    border:0;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    cursor:pointer
+}
+
+button.semEstoque {
+    background-color: green;
+}
