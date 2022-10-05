@@ -58,6 +58,15 @@ const map = produtos1.map((produto) => {
 // console.log('Map')
 // console.log(map)
 
+// let quantidadeEmEstoque = 0
+// for (let i =0 ; i < produtos1.length; i++){
+//     quantidadeEmEstoque+=produtos1[i].estoque
+// } 
+
+const quantidadeEmEstoque = produtos1.reduce(
+    (acumulado, {estoque}) => acumulado + estoque
+    , 0)
+
 
 
 let comEstoque = true
@@ -66,7 +75,8 @@ const [button] = document.getElementsByTagName('button')
 const render = () => {
     const ul = document.getElementById('produtos')
 
-    const filter = produtos1.filter(({estoque})=>(comEstoque && estoque > 0) || (!comEstoque && estoque === 0))
+    const filter = produtos1.filter(({estoque})=>
+    (comEstoque && estoque > 0) || (!comEstoque && estoque === 0))
     ul.innerHTML = ''
     
     filter.forEach(({estoque, valor}) => {
@@ -91,8 +101,6 @@ button.addEventListener('click', () => {
 
     render()
 })
-
-
 
 render()
 
